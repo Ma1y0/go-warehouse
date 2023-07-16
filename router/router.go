@@ -7,6 +7,9 @@ func CreateRouter() *gin.Engine {
 
 	// Routes
 	r.GET("/ping", HanldePing)
+	// Items routes
+	r.GET("/items", GETItems)
+	r.POST("/items", POSTItems)
 
 	return r
 }
