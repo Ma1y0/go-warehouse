@@ -10,6 +10,7 @@ func CreateRouter() *gin.Engine {
 	// Items routes
 	r.GET("/items", GETItems)
 	r.POST("/items", POSTItems)
+	r.DELETE("/items/:id", DELETEItemById)
 
 	return r
 }

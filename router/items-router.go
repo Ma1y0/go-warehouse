@@ -38,3 +38,16 @@ func POSTItems(c *gin.Context) {
 	
 	c.JSON(http.StatusCreated, gin.H{"message": "Successfully created a new item", "item": item})
 }
+
+// Delete item
+// DELETE /items/:id
+func DELETEItemById(c *gin.Context)  {
+	id := c.Param("id")
+	var deltedItem models.ItemModel
+
+	if err := models.DB.Delete(&deltedItem, id); err.Error != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"message": "Failed to Delete model with id: " + id, "error": err.Error.Error()})
+	}
+
+	c.JSON(http.StatusOK, gin.H{"message": "Successfully deleted item with id: " + id})
+}
