@@ -26,7 +26,7 @@ func TestPingRoute(t *testing.T) {
 	if err := json.Unmarshal([]byte(w.Body.String()), &response); err != nil {
 		t.FailNow()
 	}
-	// Extract message
+	// Extract message value
 	value, exists := response["message"]
 
 	assert.Equal(t, 200, w.Code)

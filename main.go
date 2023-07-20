@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/Ma1y0/go-warehouse/router"
-	"github.com/Ma1y0/go-warehouse/router/models"
+	"github.com/Ma1y0/go-warehouse/models"
 )
 
 func main() {
