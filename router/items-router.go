@@ -17,6 +17,19 @@ func GETItems(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"items": items})
 }
 
+// Get item by id 
+// GET /items/:id 
+func GETItemById(c *gin.Context) {
+	id := c.Param("id")
+	var item models.ItemModel
+	
+	if err := models.DB.First(&item, id); err.Error != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"message": "Record with this id doesn't exists", "error": err.Error.Error()})
+	}
+
+	c.JSON(http.StatusOK, gin.H{"message": "Successfully found record with id" + id, "record": item})
+}
+
 // Create item 
 // POST /items
 func POSTItems(c *gin.Context) {

@@ -9,6 +9,7 @@ func CreateRouter() *gin.Engine {
 	r.GET("/ping", HanldePing)
 	// Items routes
 	r.GET("/items", GETItems)
+	r.GET("/items/:id", GETItemById)
 	r.POST("/items", POSTItems)
 	r.DELETE("/items/:id", DELETEItemById)
 
