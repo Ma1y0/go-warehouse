@@ -17,7 +17,6 @@ func GETItems(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"items": items})
 }
 
-
 // Create item 
 // POST /items
 func POSTItems(c *gin.Context) {
